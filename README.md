@@ -17,19 +17,25 @@ Major mobile carriers in Pakistan along with their carrier code as as follows
 ## Download
 Github has a limit of 100MB on a single file in code repository, so I have to zip the files using `7z`. See the section below on installing `7z` on Mac.
 ```sh
-git clone git@github.com:hack0x90/list-of-all-pakistan-mobile-numbers.git
+git clone https://github.com/hack0x90/list-of-all-pakistan-mobile-numbers.git
 cd list-of-all-pakistan-mobile-numbers
 # Uzip all 7z files
-FILES=($(ls *.7z))
+FILES=($" *.7z")
 for f in $FILES; do 7z e $f ; done
 
 # Optionally merge all files into one
-cat *.txt >> list-of-all-pakistan-mobile-numbers.txt
+cat *.txt >> pak-mobile-numbers-lists.txt
+```
+
+### Installing 7z on Ubuntu
+```bash
+sudo apt install p7zip-full
 ```
 
 ### Installing 7z on Mac using Homebrew
 ```bash
 brew install p7zip
+
 ```
 ## Anatomy of Mobile Number
 Mobile numbers in Pakistan are 11 digits long. First 4 digits are the carrier code, and the remaining 7 diits is the phone number.
